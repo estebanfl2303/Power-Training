@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Botón</title>
+  <link rel="stylesheet" href="C:\Users\Estudiante\Documents\proyecto\estilos.css">
+</head>
+<body>
+<button onclick="mostrarImagen(1)">id</button>
+<div id="contenedor">
+  <img id="img1" src="D:\proyecto\R (1).jfif" alt="Imagen 1" style="display:none; width:300px;">
+</div>
+<button onclick="mostrarImagen(2)">id2</button>
+<div id="contenedor2">
+  <img id="img2" src="D:\proyecto\R.jfif" alt="Imagen 2" style="display:none; width:300px;">
+</div>
+<button onclick="mostrarImagen(3)">id3</button>
+<div id="contenedor3">
+  <img id="img3" src="D:\proyecto\Facebook.png" alt="Imagen 3" style="display:none; width:300px;">
+</div>
+<script>
+  function mostrarImagen(num) {
+    document.getElementById('img1').style.display='none';
+    document.getElementById('img2').style.display='none';
+    document.getElementById('img3').style.display='none';
+  document.getElementById('img' + num).style.display='block';
+  }
+</script>
+</body>
+</html>

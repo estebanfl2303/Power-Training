@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Contenido</title>
+    <link rel="shortcut icon" href="Logo.png">
+    <link rel="stylesheet" href="D:\proyecto\Pagina 4.css">
+    <meta charset="utf-8">
+</head>
+<body>
+    <div class="menu">
+        <div class="imagen-menu">
+            <div class="img1">
+                <img src="Logo.png" width="160px" height="160px">
+            </div>
+        </div>
+        <div class="submenu">
+            <div class="opcion"><a href="#image3" onclick="mostrarImagen(3)">Pregunta Problema</a></div>
+            <div class="opcion"><a href="#image4" onclick="mostrarImagen(4)">Objetivo General</a></div>
+            <div class="opcion"><a href="#image5" onclick="mostrarImagen(5)">Objetivos Específicos</a></div>
+        </div>
+    </div>
+    
+    <div class="fig1">Contenido y evidencias</div>
+    
+    <nav class="menu-vertical">
+        <ul>
+            <li><div class="text1"><a href="index.html">Inicio</a></div></li>
+            <li><div class="text2"><a href="Pagina 2.html">App</a></div></li>
+            <li><div class="text3"><a href="Pagina 3.html">FAQs</a></div></li>
+            <li><div class="text4"><a href="Pagina 4.html"><center>Sobre nosotros</center></a></div></li>
+            <li><div class="text5"><a href="Pagina 5.html"><center>Perfiles</center></a></div></li>
+            <li><div class="text6"><a href="Pagina 6.html">Contacto</a></div></li>
+        </ul>
+    </nav>
+    
+    <div class="text001"><center>Aquí, verás nuestro proceso y nuestras evidencias</center></div>
+    
+    <!-- Botones de imágenes -->
+    <div class="image-buttons-container">
+        <button class="image-button" onclick="mostrarImagen(1)">Diagrama de Pescado</button>
+        <button class="image-button" onclick="mostrarImagen(2)">Árbol de Problema</button>
+        <button class="image-button" onclick="mostrarImagen(3)">Pregunta Problema</button>
+        <button class="image-button" onclick="mostrarImagen(4)">Objetivo General</button>
+        <button class="image-button" onclick="mostrarImagen(5)">Objetivos Específicos</button>
+        <button class="image-button" onclick="mostrarImagen(6)">Misión</button>
+        <button class="image-button" onclick="mostrarImagen(7)">Visión</button>
+        <button class="image-button" onclick="mostrarImagen(8)">Cronograma</button>
+    </div>
+
+    <!-- Overlay para cerrar modales -->
+    <div id="imageOverlay" class="image-overlay" onclick="cerrarImagen()"></div>
+
+    <!-- Contenedores de imágenes -->
+    <div id="image1" class="image-container">
+        <div class="image-title">Diagrama de Pescado</div>
+        <img src="Pink Fishbone Diagram_20250516_092714_0000.png" alt="Diagrama de Pescado">
+        <br>
+        <button class="close-button" onclick="cerrarImagen()">Cerrar</button>
+    </div>
+    
+    <div id="image2" class="image-container">
+        <div class="image-title">Árbol de Problema</div>
+        <img src="1.png" alt="Árbol de Problema">
+        <br>
+        <button class="close-button" onclick="cerrarImagen()">Cerrar</button>
+    </div>
+    
+    <div id="image3" class="image-container">
+        <div class="image-title">Pregunta Problema</div>
+        <img src="pregunta problema.png" alt="Pregunta Problema">
+        <br>
+        <button class="close-button" onclick="cerrarImagen()">Cerrar</button>
+    </div>
+    
+    <div id="image4" class="image-container">
+        <div class="image-title">Objetivo General</div>
+        <img src="og.png" alt="Objetivo General">
+        <br>
+        <button class="close-button" onclick="cerrarImagen()">Cerrar</button>
+    </div>
+    
+    <div id="image5" class="image-container">
+        <div class="image-title">Objetivos Específicos</div>
+        <img src="oe.png" alt="Objetivos Específicos">
+        <br>
+        <button class="close-button" onclick="cerrarImagen()">Cerrar</button>
+    </div>
+    
+    <div id="image6" class="image-container">
+        <div class="image-title">Misión</div>
+        <img src="mision.png" alt="Misión">
+        <br>
+        <button class="close-button" onclick="cerrarImagen()">Cerrar</button>
+    </div>
+    
+    <div id="image7" class="image-container">
+        <div class="image-title">Visión</div>
+        <img src="vision.png" alt="Visión">
+        <br>
+        <button class="close-button" onclick="cerrarImagen()">Cerrar</button>
+    </div>
+    <div id="image8" class="image-container">
+        <div class="image-title">Cronograma</div>
+        <img src="crono.png" alt="Visión">
+        <br>
+        <button class="close-button" onclick="cerrarImagen()">Cerrar</button>
+    </div>
+
+    <div class="text008"><center>Ejecución del proyecto</center></div>
+    <div class="text009"><center>Ya que iniciamos nuestro proyecto, queremos mostrarte la clase que hicimos con 302 de la jornada tarde</center></div>
+    
+    <div class="figura07">
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <div class="slider-track" id="sliderTrack">
+                    <div class="slide">
+                        <img src="Evi1.jpeg" alt="Evidencia 1">
+                    </div>
+                    <div class="slide">
+                        <img src="Evi2.jpeg" alt="Evidencia 2">
+                    </div>
+                    <div class="slide">
+                        <img src="Evi3.jpeg" alt="Evidencia 3">
+                    </div>
+                    <div class="slide">
+                        <img src="Evi4.jpeg" alt="Evidencia 4">
+                    </div>
+                    <div class="slide">
+                        <img src="Evi5.jpeg" alt="Evidencia 5">
+                    </div>
+                    <div class="slide">
+                        <img src="Evi6.jpeg" alt="Evidencia 6">
+                    </div>
+                    <div class="slide">
+                        <img src="Evi7.jpeg" alt="Evidencia 7">
+                    </div>
+                    <div class="slide">
+                        <img src="Evi8.jpeg" alt="Evidencia 8">
+                    </div>
+                    <div class="slide">
+                        <img src="Evi9.jpeg" alt="Evidencia 9">
+                    </div>
+                    <div class="slide">
+                        <img src="Evi10.jpeg" alt="Evidencia 10">
+                    </div>
+                </div>
+                
+                <button class="nav-button prev" id="prevBtn">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                </button>
+                
+                <button class="nav-button next" id="nextBtn">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                </button>
+                
+                <div class="image-counter" id="imageCounter">1 / 10</div>
+            </div>
+            
+            <div class="dots-container" id="dotsContainer">
+                <div class="dot active" data-slide="0"></div>
+                <div class="dot" data-slide="1"></div>
+                <div class="dot" data-slide="2"></div>
+                <div class="dot" data-slide="3"></div>
+                <div class="dot" data-slide="4"></div>
+                <div class="dot" data-slide="5"></div>
+                <div class="dot" data-slide="6"></div>
+                <div class="dot" data-slide="7"></div>
+                <div class="dot" data-slide="8"></div>
+                <div class="dot" data-slide="9"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="language-indicator" id="currentLang">Idioma actual: Español</div>
+    <div class="translate-controls">
+        <button class="translate-btn" onclick="translateToEnglish()" id="toEnglishBtn">
+            🇺🇸 Translate to English
+        </button>
+        <button class="translate-btn" onclick="translateToSpanish()" id="toSpanishBtn">
+            🇪🇸 Traducir a Español
+        </button>
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Traduciendo...</p>
+        </div>
+        <div class="error-message" id="errorMessage"></div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+                <div class="social-icons">
+                <a href="https://web.facebook.com/profile.php?id=61581763402698"><img src="D:\proyecto\Facebook.png" alt="Facebook" width="50" height="50" style="border-radius: 50%;"></a>
+                <a href="#"><img src="D:\proyecto\X.png" alt="X" width="50" height="50" style="border-radius: 50%;"></a>
+                <a href="https://www.instagram.com/essssteban_23/"><img src="D:\proyecto\Instagram.jpg" alt="Instagram" width="50" height="50" style="border-radius: 50%;"></a>
+            </div>
+                <p>2025 Power Training. Todos los derechos reservados. | <a href="https://web.facebook.com/juanesteban.figueroaleguizamon/">Contactanos</a> | <a href="https://www.youtube.com/@jefelsito0323">Youtube</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Variables globales
+        let currentImageOpen = null;
+        let currentSlide = 0;
+        let currentLanguage = 'es';
+        const totalSlides = 10;
+
+        // ========== FUNCIONES PARA MOSTRAR/CERRAR IMÁGENES ==========
+        function mostrarImagen(imageNumber) {
+            // Cerrar cualquier imagen que esté abierta
+            cerrarImagen();
+            
+            // Mostrar la nueva imagen
+            const imageContainer = document.getElementById('image' + imageNumber);
+            const overlay = document.getElementById('imageOverlay');
+            
+            if (imageContainer && overlay) {
+                imageContainer.classList.add('active');
+                overlay.classList.add('active');
+                currentImageOpen = imageNumber;
+                
+                // Prevenir scroll del body
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function cerrarImagen() {
+            if (currentImageOpen) {
+                const imageContainer = document.getElementById('image' + currentImageOpen);
+                const overlay = document.getElementById('imageOverlay');
+                
+                if (imageContainer) {
+                    imageContainer.classList.remove('active');
+                }
+                if (overlay) {
+                    overlay.classList.remove('active');
+                }
+                
+                currentImageOpen = null;
+                
+                // Restaurar scroll del body
+                document.body.style.overflow = 'auto';
+            }
+            
+            // También cerrar todas las imágenes por si acaso
+            const allContainers = document.querySelectorAll('.image-container');
+            const overlay = document.getElementById('imageOverlay');
+            
+            allContainers.forEach(container => {
+                container.classList.remove('active');
+            });
+            
+            if (overlay) {
+                overlay.classList.remove('active');
+            }
+            
+            document.body.style.overflow = 'auto';
+        }
+
+        // Cerrar con tecla ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                cerrarImagen();
+            }
+        });
+
+        // ========== FUNCIONES DEL SLIDER ==========
+        function initSlider() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const dots = document.querySelectorAll('.dot');
+            
+            console.log('Inicializando slider...');
+            
+            if (prevBtn) {
+                prevBtn.addEventListener('click', prevSlide);
+                console.log('Botón anterior configurado');
+            }
+            
+            if (nextBtn) {
+                nextBtn.addEventListener('click', nextSlide);
+                console.log('Botón siguiente configurado');
+            }
+            
+            // Agregar event listeners a los dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => goToSlide(index));
+            });
+            
+            updateSlider();
+            console.log('Slider inicializado correctamente');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateSlider();
+        }
+
+        function updateSlider() {
+            const sliderTrack = document.getElementById('sliderTrack');
+            const imageCounter = document.getElementById('imageCounter');
+            const dots = document.querySelectorAll('.dot');
+            
+            if (sliderTrack) {
+                // Mover el slider (cada slide es 10% del ancho total)
+                const translateX = -currentSlide * 10;
+                sliderTrack.style.transform = `translateX(${translateX}%)`;
+            }
+            
+            if (imageCounter) {
+                imageCounter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+            }
+            
+            // Actualizar dots
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        // ========== FUNCIONES DE TRADUCCIÓN ==========
+        function showLoading() {
+            const loadingElement = document.getElementById('loading');
+            if (loadingElement) {
+                loadingElement.style.display = 'block';
+            }
+            const errorElement = document.getElementById('errorMessage');
+            if (errorElement) {
+                errorElement.style.display = 'none';
+            }
+        }
+
+        function hideLoading() {
+            const loadingElement = document.getElementById('loading');
+            if (loadingElement) {
+                loadingElement.style.display = 'none';
+            }
+        }
+
+        function showError(message) {
+            const errorDiv = document.getElementById('errorMessage');
+            if (errorDiv) {
+                errorDiv.textContent = message;
+                errorDiv.style.display = 'block';
+            }
+        }
+
+        function updateLanguageIndicator(lang) {
+            const indicator = document.getElementById('currentLang');
+            if (indicator) {
+                if (lang === 'es') {
+                    indicator.textContent = 'Idioma actual: Español';
+                } else {
+                    indicator.textContent = 'Current Language: English';
+                }
+            }
+        }
+
+        function translateToEnglish() {
+            if (currentLanguage === 'en') return;
+            
+            showLoading();
+            
+            setTimeout(() => {
+                // Traducir título principal
+                const fig1 = document.querySelector('.fig1');
+                if (fig1) {
+                    fig1.textContent = 'Content and Evidence';
+                }
+                
+                // Traducir enlaces del menú
+                const menuLinks = document.querySelectorAll('.submenu .opcion a');
+                const englishMenuTexts = ['Problem Question', 'General Objective', 'Specific Objectives'];
+                menuLinks.forEach((link, index) => {
+                    if (englishMenuTexts[index]) {
+                        link.textContent = englishMenuTexts[index];
+                    }
+                });
+                
+                // Traducir navegación vertical
+                const navLinks = document.querySelectorAll('.menu-vertical a');
+                const englishNavTexts = ['Home', 'App', 'FAQs', 'About Us', 'More'];
+                navLinks.forEach((link, index) => {
+                    if (englishNavTexts[index]) {
+                        if (index === 3 || index === 4) {
+                            link.innerHTML = `<center>${englishNavTexts[index]}</center>`;
+                        } else {
+                            link.textContent = englishNavTexts[index];
+                        }
+                    }
+                });
+                
+                // Traducir contenido específico de la página
+                const text001 = document.querySelector('.text001');
+                if (text001) {
+                    text001.innerHTML = '<center>Here, you will see our process and our evidence</center>';
+                }
+                
+                const text008 = document.querySelector('.text008');
+                if (text008) {
+                    text008.innerHTML = '<center>Project Execution</center>';
+                }
+                
+                const text009 = document.querySelector('.text009');
+                if (text009) {
+                    text009.innerHTML = '<center>Since we started our project, we want to show you the class we did with 302 from the afternoon shift</center>';
+                }
+                
+                // Traducir botones de imágenes
+                const imageButtons = document.querySelectorAll('.image-button');
+                const englishButtonTexts = [
+                    'Fishbone Diagram', 
+                    'Problem Tree', 
+                    'Problem Question', 
+                    'General Objective', 
+                    'Specific Objectives', 
+                    'Mission', 
+                    'Vision'
+                ];
+                imageButtons.forEach((button, index) => {
+                    if (englishButtonTexts[index]) {
+                        button.textContent = englishButtonTexts[index];
+                    }
+                });
+                
+                // Traducir títulos de imágenes
+                const imageTitles = document.querySelectorAll('.image-title');
+                imageTitles.forEach((title, index) => {
+                    if (englishButtonTexts[index]) {
+                        title.textContent = englishButtonTexts[index];
+                    }
+                });
+                
+                // Traducir botones de cerrar
+                const closeButtons = document.querySelectorAll('.close-button');
+                closeButtons.forEach(button => {
+                    button.textContent = 'Close';
+                });
+                
+                // Traducir footer
+                const footerText = document.querySelector('footer p');
+                if (footerText) {
+                    footerText.innerHTML = '2025 Power Training. All rights reserved. | <a href="https://web.facebook.com/juanesteban.figueroaleguizamon/">Contact us</a> | <a href="https://www.youtube.com/@jefelsito0323">Youtube</a>';
+                }
+                
+                // Traducir botones de traducción
+                const toEnglishBtn = document.getElementById('toEnglishBtn');
+                const toSpanishBtn = document.getElementById('toSpanishBtn');
+                if (toEnglishBtn) toEnglishBtn.textContent = '🇺🇸 Translate to English';
+                if (toSpanishBtn) toSpanishBtn.textContent = '🇪🇸 Traducir a Español';
+                
+                currentLanguage = 'en';
+                updateLanguageIndicator('en');
+                updateButtonStates();
+                hideLoading();
+            }, 1000);
+        }
+
+        function translateToSpanish() {
+            if (currentLanguage === 'es') return;
+            
+            showLoading();
+            
+            setTimeout(() => {
+                // Restaurar título principal
+                const fig1 = document.querySelector('.fig1');
+                if (fig1) {
+                    fig1.textContent = 'Contenido y evidencias';
+                }
+                
+                // Restaurar enlaces del menú
+                const menuLinks = document.querySelectorAll('.submenu .opcion a');
+                const spanishMenuTexts = ['Pregunta Problema', 'Objetivo General', 'Objetivos Específicos'];
+                menuLinks.forEach((link, index) => {
+                    if (spanishMenuTexts[index]) {
+                        link.textContent = spanishMenuTexts[index];
+                    }
+                });
+                
+                // Restaurar navegación vertical
+                const navLinks = document.querySelectorAll('.menu-vertical a');
+                const spanishNavTexts = ['Inicio', 'App', 'FAQs', 'Sobre nosotros', 'Más'];
+                navLinks.forEach((link, index) => {
+                    if (spanishNavTexts[index]) {
+                        if (index === 3 || index === 4) {
+                            link.innerHTML = `<center>${spanishNavTexts[index]}</center>`;
+                        } else {
+                            link.textContent = spanishNavTexts[index];
+                        }
+                    }
+                });
+                
+                // Restaurar contenido específico de la página
+                const text001 = document.querySelector('.text001');
+                if (text001) {
+                    text001.innerHTML = '<center>Aquí, verás nuestro proceso y nuestras evidencias</center>';
+                }
+                
+                const text008 = document.querySelector('.text008');
+                if (text008) {
+                    text008.innerHTML = '<center>Ejecución del proyecto</center>';
+                }
+                
+                const text009 = document.querySelector('.text009');
+                if (text009) {
+                    text009.innerHTML = '<center>Ya que iniciamos nuestro proyecto, queremos mostrarte la clase que hicimos con 302 de la jornada tarde</center>';
+                }
+                
+                // Restaurar botones de imágenes
+                const imageButtons = document.querySelectorAll('.image-button');
+                const spanishButtonTexts = [
+                    'Diagrama de Pescado', 
+                    'Árbol de Problema', 
+                    'Pregunta Problema', 
+                    'Objetivo General', 
+                    'Objetivos Específicos', 
+                    'Misión', 
+                    'Visión'
+                ];
+                imageButtons.forEach((button, index) => {
+                    if (spanishButtonTexts[index]) {
+                        button.textContent = spanishButtonTexts[index];
+                    }
+                });
+                
+                // Restaurar títulos de imágenes
+                const imageTitles = document.querySelectorAll('.image-title');
+                imageTitles.forEach((title, index) => {
+                    if (spanishButtonTexts[index]) {
+                        title.textContent = spanishButtonTexts[index];
+                    }
+                });
+                
+                // Restaurar botones de cerrar
+                const closeButtons = document.querySelectorAll('.close-button');
+                closeButtons.forEach(button => {
+                    button.textContent = 'Cerrar';
+                });
+                
+                // Restaurar footer
+                const footerText = document.querySelector('footer p');
+                if (footerText) {
+                    footerText.innerHTML = '2025 Power Training. Todos los derechos reservados. | <a href="https://web.facebook.com/juanesteban.figueroaleguizamon/">Contactanos</a> | <a href="https://www.youtube.com/@jefelsito0323">Youtube</a>';
+                }
+                
+                // Restaurar botones de traducción
+                const toEnglishBtn = document.getElementById('toEnglishBtn');
+                const toSpanishBtn = document.getElementById('toSpanishBtn');
+                if (toEnglishBtn) toEnglishBtn.textContent = '🇺🇸 Translate to English';
+                if (toSpanishBtn) toSpanishBtn.textContent = '🇪🇸 Traducir a Español';
+                
+                currentLanguage = 'es';
+                updateLanguageIndicator('es');
+                updateButtonStates();
+                hideLoading();
+            }, 1000);
+        }
+
+        function updateButtonStates() {
+            const toEnglishBtn = document.getElementById('toEnglishBtn');
+            const toSpanishBtn = document.getElementById('toSpanishBtn');
+            
+            if (toEnglishBtn && toSpanishBtn) {
+                if (currentLanguage === 'es') {
+                    toEnglishBtn.style.opacity = '1';
+                    toSpanishBtn.style.opacity = '0.6';
+                    toEnglishBtn.style.pointerEvents = 'auto';
+                    toSpanishBtn.style.pointerEvents = 'none';
+                } else {
+                    toEnglishBtn.style.opacity = '0.6';
+                    toSpanishBtn.style.opacity = '1';
+                    toEnglishBtn.style.pointerEvents = 'none';
+                    toSpanishBtn.style.pointerEvents = 'auto';
+                }
+            }
+        }
+
+        // ========== INICIALIZACIÓN ==========
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM cargado, inicializando funciones...');
+            initSlider();
+            updateButtonStates();
+        });
+
+        // Inicialización inmediata por compatibilidad
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() {
+                initSlider();
+                updateButtonStates();
+            });
+        } else {
+            initSlider();
+            updateButtonStates();
+        }
+
+        // Hacer las funciones disponibles globalmente
+        window.mostrarImagen = mostrarImagen;
+        window.cerrarImagen = cerrarImagen;
+        window.translateToEnglish = translateToEnglish;
+        window.translateToSpanish = translateToSpanish;
+    </script>
+</body>
+</html>

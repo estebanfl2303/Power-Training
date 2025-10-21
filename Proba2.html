@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web - Traductor</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="translatable" data-es="Bienvenido a Mi Página Web" data-en="Welcome to My Website">Bienvenido a Mi Página Web</h1>
+            <div class="language-indicator" id="currentLang">Idioma actual: Español</div>
+        </div>
+
+        <div class="translate-controls">
+            <button class="translate-btn" onclick="translateToEnglish()" id="toEnglishBtn">
+                🇺🇸 Translate to English
+            </button>
+            <button class="translate-btn" onclick="translateToSpanish()" id="toSpanishBtn">
+                🇪🇸 Traducir a Español
+            </button>
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Traduciendo...</p>
+            </div>
+            <div class="error-message" id="errorMessage"></div>
+        </div>
+
+        <div class="content">
+            <h2 class="translatable" data-es="Sobre Nosotros" data-en="About Us">Sobre Nosotros</h2>
+            <p class="translatable" data-es="Somos una empresa dedicada a brindar soluciones innovadoras en tecnología web. Nuestro equipo está compuesto por profesionales altamente calificados que trabajan día a día para ofrecer la mejor experiencia a nuestros usuarios." data-en="We are a company dedicated to providing innovative solutions in web technology. Our team consists of highly qualified professionals who work day by day to offer the best experience to our users.">
+                Somos una empresa dedicada a brindar soluciones innovadoras en tecnología web. Nuestro equipo está compuesto por profesionales altamente calificados que trabajan día a día para ofrecer la mejor experiencia a nuestros usuarios.
+            </p>
+
+            <div class="highlight-box">
+                <p class="translatable" data-es="Nuestra misión es transformar ideas en realidades digitales que impulsen el crecimiento de nuestros clientes." data-en="Our mission is to transform ideas into digital realities that drive the growth of our clients.">
+                    <strong>Nuestra misión es transformar ideas en realidades digitales que impulsen el crecimiento de nuestros clientes.</strong>
+                </p>
+            </div>
+
+            <h2 class="translatable" data-es="Servicios" data-en="Services">Servicios</h2>
+            <p class="translatable" data-es="Ofrecemos una amplia gama de servicios que incluyen desarrollo web, diseño de aplicaciones móviles, consultoría en tecnología y soluciones de comercio electrónico. Cada proyecto es único y lo abordamos con creatividad y profesionalismo." data-en="We offer a wide range of services including web development, mobile application design, technology consulting and e-commerce solutions. Each project is unique and we approach it with creativity and professionalism.">
+                Ofrecemos una amplia gama de servicios que incluyen desarrollo web, diseño de aplicaciones móviles, consultoría en tecnología y soluciones de comercio electrónico. Cada proyecto es único y lo abordamos con creatividad y profesionalismo.
+            </p>
+
+            <h2 class="translatable" data-es="Contacto" data-en="Contact">Contacto</h2>
+            <p class="translatable" data-es="¿Tienes un proyecto en mente? No dudes en contactarnos. Estamos aquí para ayudarte a convertir tus ideas en realidad. Puedes escribirnos a través de nuestro formulario de contacto o llamarnos directamente." data-en="Do you have a project in mind? Don't hesitate to contact us. We are here to help you turn your ideas into reality. You can write to us through our contact form or call us directly.">
+                ¿Tienes un proyecto en mente? No dudes en contactarnos. Estamos aquí para ayudarte a convertir tus ideas en realidad. Puedes escribirnos a través de nuestro formulario de contacto o llamarnos directamente.
+            </p>
+        </div>
+
+        <div class="footer">
+            <p class="translatable" data-es="© 2024 Mi Empresa. Todos los derechos reservados." data-en="© 2024 My Company. All rights reserved.">
+                © 2024 Mi Empresa. Todos los derechos reservados.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        let currentLanguage = 'es';
+        
+        function showLoading() {
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('errorMessage').style.display = 'none';
+        }
+        
+        function hideLoading() {
+            document.getElementById('loading').style.display = 'none';
+        }
+        
+        function showError(message) {
+            const errorDiv = document.getElementById('errorMessage');
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+        }
+        
+        function updateLanguageIndicator(lang) {
+            const indicator = document.getElementById('currentLang');
+            if (lang === 'es') {
+                indicator.textContent = 'Idioma actual: Español';
+            } else {
+                indicator.textContent = 'Current Language: English';
+            }
+        }
+        
+        function translateToEnglish() {
+            if (currentLanguage === 'en') return;
+            
+            showLoading();
+            
+            // Simular tiempo de carga (en implementación real usarías una API)
+            setTimeout(() => {
+                const elements = document.querySelectorAll('.translatable');
+                
+                elements.forEach(element => {
+                    const englishText = element.getAttribute('data-en');
+                    if (englishText) {
+                        element.textContent = englishText;
+                    }
+                });
+                
+                currentLanguage = 'en';
+                updateLanguageIndicator('en');
+                updateButtonStates();
+                hideLoading();
+            }, 1000);
+        }
+        
+        function translateToSpanish() {
+            if (currentLanguage === 'es') return;
+            
+            showLoading();
+            
+            // Simular tiempo de carga
+            setTimeout(() => {
+                const elements = document.querySelectorAll('.translatable');
+                
+                elements.forEach(element => {
+                    const spanishText = element.getAttribute('data-es');
+                    if (spanishText) {
+                        element.textContent = spanishText;
+                    }
+                });
+                
+                currentLanguage = 'es';
+                updateLanguageIndicator('es');
+                updateButtonStates();
+                hideLoading();
+            }, 1000);
+        }
+        
+        function updateButtonStates() {
+            const toEnglishBtn = document.getElementById('toEnglishBtn');
+            const toSpanishBtn = document.getElementById('toSpanishBtn');
+            
+            if (currentLanguage === 'es') {
+                toEnglishBtn.style.opacity = '1';
+                toSpanishBtn.style.opacity = '0.5';
+                toEnglishBtn.style.pointerEvents = 'auto';
+                toSpanishBtn.style.pointerEvents = 'none';
+            } else {
+                toEnglishBtn.style.opacity = '0.5';
+                toSpanishBtn.style.opacity = '1';
+                toEnglishBtn.style.pointerEvents = 'none';
+                toSpanishBtn.style.pointerEvents = 'auto';
+            }
+        }
+        
+        // Función alternativa usando Google Translate API (requiere clave API)
+        function translateWithGoogleAPI(text, targetLang) {
+            // Esta función requiere una clave API de Google Translate
+            // const apiKey = 'TU_CLAVE_API_AQUI';
+            // const url = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}`;
+            
+            // return fetch(url, {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //     },
+            //     body: JSON.stringify({
+            //         q: text,
+            //         target: targetLang,
+            //         source: 'auto'
+            //     })
+            // })
+            // .then(response => response.json())
+            // .then(data => data.data.translations[0].translatedText);
+        }
+        
+        // Inicializar estados de botones
+        updateButtonStates();
+        
+        // Función para detectar el idioma del navegador y establecer idioma inicial
+        function detectBrowserLanguage() {
+            const browserLang = navigator.language || navigator.userLanguage;
+            if (browserLang.startsWith('en')) {
+                translateToEnglish();
+            }
+        }
+        
+        // Opcionalmente, detectar idioma del navegador al cargar
+        // detectBrowserLanguage();
+    </script>
+</body>
+</html>

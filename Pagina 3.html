@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<head><title>FAQs</title>
+<link rel="shortcut icon" href="D:\proyecto\Logo.png">
+<link rel="stylesheet" href="D:\proyecto\Pagina 3.css"><meta charset="utf-8"></head>
+<body>
+    <div class="menu">
+    <div class="imagen-menu">
+    <div class="img1">
+    <img src="D:\proyecto\Logo.png" width="160px" height="160px">
+    </div></div>
+    <div class="submenu">
+            <div class="opcion"><a href="D:\proyecto\Pagina 4.html">Pregunta Problema</a></div>
+            <div class="opcion"><a href="D:\proyecto\Pagina 4.html">Objetivo General</a></div>
+            <div class="opcion"><a href="D:\proyecto\Pagina 4.html">Objetivos Específicos</a></div>
+        </div>
+    </div>
+    <div class="fig1">FAQs</div>
+    <nav class="menu-vertical">
+        <ul>
+    <li><div class="text1"><a href="index.html">Inicio</a></div></li>
+            <li><div class="text2"><a href="Pagina 2.html">App</a></div></li>
+            <li><div class="text3"><a href="Pagina 3.html">FAQs</a></div></li>
+            <li><div class="text4"><a href="Pagina 4.html"><center>Sobre nosotros</center></a></div></li>
+            <li><div class="text5"><a href="Pagina 5.html"><center>Perfiles</center></a></div></li>
+            <li><div class="text6"><a href="Pagina 6.html">Contacto</a></div></li>
+    </ul>
+    <div class="text01"><center>Aquí verás algunas preguntas frecuentes y su respuestas</center></div>
+    <div class="text02">¿Qué hago si no tengo dinero para pagarme un gimnasio?</div>
+    <div class="text03">Puedes hacer distintos ejercicios en casa, aquí te enseñamos algunos</div>
+    <div class="text04">¿Cómo se aíslan los músculos?</div>
+    <div class="text05">No hay una manera en sí para aislarlos, pero puedes darles más protagonismo</div>
+    <div class="text06"> ¿Cuántas veces a la semana debo entrenar?</div>
+    <div class="text07">Lo ideal es 3 a 5 veces por semana, dependiendo de tus objetivos y nivel.</div>
+    <div class="text08">¿Es mejor hacer cardio o pesas para bajar de peso?</div>
+    <div class="text09"> Lo mejor es combinar ambos. Las pesas ayudan a mantener músculo y el cardio quema calorías, pero la clave está en el déficit calórico.</div>
+    <div class="text010">¿Puedo entrenar si tengo dolor muscular (agujetas)?</div>
+    <div class="text011"> Sí, pero entrena otro grupo muscular o haz actividad ligera (como caminar o estiramientos). Las agujetas son normales y disminuyen con la constancia.</div>
+    <div class="text012">¿Debo hacer abdominales todos los días para marcar el abdomen?</div>
+    <div class="text013">No. Los abdominales se marcan con bajo porcentaje de grasa (dieta) y entrenamiento de fuerza (2-3 veces/semana). No sirve hacer 1000 abdominales al día.</div>
+    <div class="language-indicator" id="currentLang">Idioma actual: Español</div>
+        </div>
+    <div class="translate-controls">
+            <button class="translate-btn" onclick="translateToEnglish()" id="toEnglishBtn">
+                🇺🇸 Translate to English
+            </button>
+            <button class="translate-btn" onclick="translateToSpanish()" id="toSpanishBtn">
+                🇪🇸 Traducir a Español
+            </button>
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Traduciendo...</p>
+            </div>
+            <div class="error-message" id="errorMessage"></div>
+        </div>
+    <footer>
+	<div class="footer-content">
+            <div class="social-icons">
+                <a href="https://web.facebook.com/profile.php?id=61581763402698"><img src="D:\proyecto\Facebook.png" alt="Facebook" width="50" height="50"></a>
+                <a href="#"><img src="D:\proyecto\X.png" alt="X" width="50" height="50"></a>
+                <a href="https://www.instagram.com/essssteban_23/"><img src="D:\proyecto\Instagram.jpg" alt="Instagram" width="50" height="50"></a>
+            </div>
+            <center><p>2025 Power Training. Todos los derechos reservados. | <a href="https://web.facebook.com/juanesteban.figueroaleguizamon/">Contactanos</a> | <a href="https://www.youtube.com/@jefelsito0323">Youtube</a></p></center>
+        </div>
+    </footer>
+<script>
+let currentLanguage = 'es';
+
+function showLoading() {
+    const loadingElement = document.getElementById('loading');
+    if (loadingElement) {
+        loadingElement.style.display = 'block';
+    }
+    const errorElement = document.getElementById('errorMessage');
+    if (errorElement) {
+        errorElement.style.display = 'none';
+    }
+}
+
+function hideLoading() {
+    const loadingElement = document.getElementById('loading');
+    if (loadingElement) {
+        loadingElement.style.display = 'none';
+    }
+}
+
+function showError(message) {
+    const errorDiv = document.getElementById('errorMessage');
+    if (errorDiv) {
+        errorDiv.textContent = message;
+        errorDiv.style.display = 'block';
+    }
+}
+
+function updateLanguageIndicator(lang) {
+    const indicator = document.getElementById('currentLang');
+    if (indicator) {
+        if (lang === 'es') {
+            indicator.textContent = 'Idioma actual: Español';
+        } else {
+            indicator.textContent = 'Current Language: English';
+        }
+    }
+}
+
+function translateToEnglish() {
+    if (currentLanguage === 'en') return;
+    
+    showLoading();
+    
+    setTimeout(() => {
+        const elements = document.querySelectorAll('.translatable');
+        
+        elements.forEach(element => {
+            const englishText = element.getAttribute('data-en');
+            if (englishText) {
+                element.textContent = englishText;
+            }
+        });
+        
+        // Traducir título principal
+        const fig1 = document.querySelector('.fig1');
+        if (fig1) {
+            fig1.textContent = 'FAQs';
+        }
+        
+        // Traducir enlaces del menú
+        const menuLinks = document.querySelectorAll('.submenu .opcion a');
+        const englishMenuTexts = ['Problem Question', 'General Objective', 'Specific Objectives'];
+        menuLinks.forEach((link, index) => {
+            if (englishMenuTexts[index]) {
+                link.textContent = englishMenuTexts[index];
+            }
+        });
+        
+        // Traducir navegación vertical
+        const navLinks = document.querySelectorAll('.menu-vertical a');
+        const englishNavTexts = ['Home', 'App', 'FAQs', 'Content', 'About Us'];
+        navLinks.forEach((link, index) => {
+            if (englishNavTexts[index]) {
+                if (index === 4) {
+                    link.innerHTML = '<center>About Us</center>';
+                } else {
+                    link.textContent = englishNavTexts[index];
+                }
+            }
+        });
+        
+        // Traducir contenido específico de FAQs
+        const text01 = document.querySelector('.text01');
+        if (text01) {
+            text01.innerHTML = '<center>Here you will see some frequently asked questions and their answers</center>';
+        }
+        
+        const text02 = document.querySelector('.text02');
+        if (text02) {
+            text02.textContent = 'What do I do if I don\'t have money to pay for a gym?';
+        }
+        
+        const text03 = document.querySelector('.text03');
+        if (text03) {
+            text03.textContent = 'You can do different exercises at home, here we show you some';
+        }
+        
+        const text04 = document.querySelector('.text04');
+        if (text04) {
+            text04.textContent = 'How do you isolate muscles?';
+        }
+        
+        const text05 = document.querySelector('.text05');
+        if (text05) {
+            text05.textContent = 'There is no specific way to isolate them, but you can give them more prominence';
+        }
+        
+        const text06 = document.querySelector('.text06');
+        if (text06) {
+            text06.textContent = 'How many times a week should I train?';
+        }
+        
+        const text07 = document.querySelector('.text07');
+        if (text07) {
+            text07.textContent = 'Ideally 3 to 5 times per week, depending on your goals and level.';
+        }
+        
+        const text08 = document.querySelector('.text08');
+        if (text08) {
+            text08.textContent = 'Is it better to do cardio or weights to lose weight?';
+        }
+        
+        const text09 = document.querySelector('.text09');
+        if (text09) {
+            text09.textContent = 'The best is to combine both. Weights help maintain muscle and cardio burns calories, but the key is in the caloric deficit.';
+        }
+        
+        const text010 = document.querySelector('.text010');
+        if (text010) {
+            text010.textContent = 'Can I train if I have muscle pain (soreness)?';
+        }
+        
+        const text011 = document.querySelector('.text011');
+        if (text011) {
+            text011.textContent = 'Yes, but train another muscle group or do light activity (like walking or stretching). Soreness is normal and decreases with consistency.';
+        }
+        
+        const text012 = document.querySelector('.text012');
+        if (text012) {
+            text012.textContent = 'Should I do abs every day to mark the abdomen?';
+        }
+        
+        const text013 = document.querySelector('.text013');
+        if (text013) {
+            text013.textContent = 'No. Abs are marked with low body fat percentage (diet) and strength training (2-3 times/week). Doing 1000 abs a day doesn\'t work.';
+        }
+        
+        // Traducir footer
+        const footerText = document.querySelector('footer p');
+        if (footerText) {
+            footerText.innerHTML = '2025 Power Training. All rights reserved. | <a href="https://web.facebook.com/juanesteban.figueroaleguizamon/">Contact us</a> | <a href="https://www.youtube.com/@jefelsito0323">Youtube</a>';
+        }
+        
+        currentLanguage = 'en';
+        updateLanguageIndicator('en');
+        updateButtonStates();
+        hideLoading();
+    }, 1000);
+}
+
+function translateToSpanish() {
+    if (currentLanguage === 'es') return;
+    
+    showLoading();
+    
+    setTimeout(() => {
+        const elements = document.querySelectorAll('.translatable');
+        
+        elements.forEach(element => {
+            const spanishText = element.getAttribute('data-es');
+            if (spanishText) {
+                element.textContent = spanishText;
+            }
+        });
+        
+        // Restaurar título principal
+        const fig1 = document.querySelector('.fig1');
+        if (fig1) {
+            fig1.textContent = 'FAQs';
+        }
+        
+        // Restaurar enlaces del menú
+        const menuLinks = document.querySelectorAll('.submenu .opcion a');
+        const spanishMenuTexts = ['Pregunta Problema', 'Objetivo General', 'Objetivos Específicos'];
+        menuLinks.forEach((link, index) => {
+            if (spanishMenuTexts[index]) {
+                link.textContent = spanishMenuTexts[index];
+            }
+        });
+        
+        // Restaurar navegación vertical
+        const navLinks = document.querySelectorAll('.menu-vertical a');
+        const spanishNavTexts = ['Inicio', 'App', 'FAQs', 'Contenido', 'Sobre nosotros'];
+        navLinks.forEach((link, index) => {
+            if (spanishNavTexts[index]) {
+                if (index === 4) {
+                    link.innerHTML = '<center>Sobre nosotros</center>';
+                } else {
+                    link.textContent = spanishNavTexts[index];
+                }
+            }
+        });
+        
+        // Restaurar contenido específico de FAQs
+        const text01 = document.querySelector('.text01');
+        if (text01) {
+            text01.innerHTML = '<center>Aquí verás algunas preguntas frecuentes y su respuestas</center>';
+        }
+        
+        const text02 = document.querySelector('.text02');
+        if (text02) {
+            text02.textContent = '¿Qué hago si no tengo dinero para pagarme un gimnasio?';
+        }
+        
+        const text03 = document.querySelector('.text03');
+        if (text03) {
+            text03.textContent = 'Puedes hacer distintos ejercicios en casa, aquí te enseñamos algunos';
+        }
+        
+        const text04 = document.querySelector('.text04');
+        if (text04) {
+            text04.textContent = '¿Cómo se aíslan los músculos?';
+        }
+        
+        const text05 = document.querySelector('.text05');
+        if (text05) {
+            text05.textContent = 'No hay una manera en sí para aislarlos, pero puedes darles más protagonismo';
+        }
+        
+        const text06 = document.querySelector('.text06');
+        if (text06) {
+            text06.textContent = '¿Cuántas veces a la semana debo entrenar?';
+        }
+        
+        const text07 = document.querySelector('.text07');
+        if (text07) {
+            text07.textContent = 'Lo ideal es 3 a 5 veces por semana, dependiendo de tus objetivos y nivel.';
+        }
+        
+        const text08 = document.querySelector('.text08');
+        if (text08) {
+            text08.textContent = '¿Es mejor hacer cardio o pesas para bajar de peso?';
+        }
+        
+        const text09 = document.querySelector('.text09');
+        if (text09) {
+            text09.textContent = 'Lo mejor es combinar ambos. Las pesas ayudan a mantener músculo y el cardio quema calorías, pero la clave está en el déficit calórico.';
+        }
+        
+        const text010 = document.querySelector('.text010');
+        if (text010) {
+            text010.textContent = '¿Puedo entrenar si tengo dolor muscular (agujetas)?';
+        }
+        
+        const text011 = document.querySelector('.text011');
+        if (text011) {
+            text011.textContent = 'Sí, pero entrena otro grupo muscular o haz actividad ligera (como caminar o estiramientos). Las agujetas son normales y disminuyen con la constancia.';
+        }
+        
+        const text012 = document.querySelector('.text012');
+        if (text012) {
+            text012.textContent = '¿Debo hacer abdominales todos los días para marcar el abdomen?';
+        }
+        
+        const text013 = document.querySelector('.text013');
+        if (text013) {
+            text013.textContent = 'No. Los abdominales se marcan con bajo porcentaje de grasa (dieta) y entrenamiento de fuerza (2-3 veces/semana). No sirve hacer 1000 abdominales al día.';
+        }
+        
+        // Restaurar footer
+        const footerText = document.querySelector('footer p');
+        if (footerText) {
+            footerText.innerHTML = '2025 Power Training. Todos los derechos reservados. | <a href="https://web.facebook.com/juanesteban.figueroaleguizamon/">Contactanos</a> | <a href="https://www.youtube.com/@jefelsito0323">Youtube</a>';
+        }
+        
+        currentLanguage = 'es';
+        updateLanguageIndicator('es');
+        updateButtonStates();
+        hideLoading();
+    }, 1000);
+}
+
+function updateButtonStates() {
+    const toEnglishBtn = document.getElementById('toEnglishBtn');
+    const toSpanishBtn = document.getElementById('toSpanishBtn');
+    
+    if (toEnglishBtn && toSpanishBtn) {
+        if (currentLanguage === 'es') {
+            toEnglishBtn.style.opacity = '1';
+            toSpanishBtn.style.opacity = '0.6';
+            toEnglishBtn.style.pointerEvents = 'auto';
+            toSpanishBtn.style.pointerEvents = 'none';
+        } else {
+            toEnglishBtn.style.opacity = '0.6';
+            toSpanishBtn.style.opacity = '1';
+            toEnglishBtn.style.pointerEvents = 'none';
+            toSpanishBtn.style.pointerEvents = 'auto';
+        }
+    }
+}
+
+// Inicializar estados de botones cuando se carga la página
+document.addEventListener('DOMContentLoaded', function() {
+    updateButtonStates();
+});
+
+// También inicializar inmediatamente por compatibilidad
+updateButtonStates();
+</script>
+</body>
+</html>

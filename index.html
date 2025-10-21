@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<head><title>Power Training</title>
+<link rel="shortcut icon" href="D:\proyecto\Logo.png">
+<link rel="stylesheet" href="D:\proyecto\index.css"><meta charset="utf-8"></head>
+<body>
+    <div class="menu">
+    <div class="imagen-menu">
+    <div class="img1">
+    <img src="D:\proyecto\Logo.png" width="160px" height="160px">
+    </div></div>
+    <div class="submenu">
+            <div class="opcion"><a href="D:\proyecto\Pagina 4.html">Pregunta Problema</a></div>
+            <div class="opcion"><a href="D:\proyecto\Pagina 4.html">Objetivo General</a></div>
+            <div class="opcion"><a href="D:\proyecto\Pagina 4.html">Objetivos Específicos</a></div>
+        </div>
+    </div>
+    <div class="fig1"><center>Entrena Fuerte</center></div>
+    <nav class="menu-vertical">
+        <ul>
+    <li><div class="text1"><a href="index.html">Inicio</a></div></li>
+    <li><div class="text2"><a href="Pagina 2.html">App</a></div></li>
+    <li><div class="text3"><a href="Pagina 3.html">FAQs</a></div></li>
+    <li><div class="text4"><a href="Pagina 4.html"><center>Sobre nosotros</center></a></div></li>
+    <li><div class="text5"><a href="Pagina 5.html"><center>Perfiles</center></a></div></li>
+    <li><div class="texto6"><a href="Pagina 6.html">Contacto</a></li>
+</ul>
+    <div class="language-indicator" id="currentLang">Idioma actual: Español</div>
+        </div>
+
+        <div class="translate-controls">
+            <button class="translate-btn" onclick="translateToEnglish()" id="toEnglishBtn">
+                🇺🇸 Translate to English
+            </button>
+            <button class="translate-btn" onclick="translateToSpanish()" id="toSpanishBtn">
+                🇪🇸 Traducir a Español
+            </button>
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Traduciendo...</p>
+            </div>
+            <div class="error-message" id="errorMessage"></div>
+        </div>
+    <div class="banner"><img src="ban.png" width="1280px" height="540px"></div>
+    <div class="text6"><center>Diferentes entrenamientos desde casa para ti</center></div>
+    <div class="text8"><center>Preguntas frecuentes acerca del ejercicio</center></div>
+    <div class="text10"><center>Conoce varios musculos</center></div>
+    <div class="text12">Calcula tu IMC</div>
+    <div class="text13"><center>App interactivo acerca del ejercicio</center></div>
+    <div class="fig2"><img src="D:\proyecto\Imagen1.jpg" width="200px" height="100px"></div>
+    <div class="cuadro"><img src="D:\proyecto\Imagen3.jpg" width="200px" height="200px"></div>
+    <div class="cuadro2"><img src="D:\proyecto\Imagen2.jpg" width="200px" height="200px"></div>
+    <div class="cuadro3"><img src="D:\proyecto\Imagen4.jpg" width="200px" height="200px"></div>
+    <div class="cuadro4"><img src="D:\proyecto\Imagen5.jpg" width="200px" height="200px"></div>
+    <footer>
+	<div class="footer-content">
+            <div class="social-icons">
+                <a href="https://web.facebook.com/profile.php?id=61581763402698"><img src="D:\proyecto\Facebook.png" alt="Facebook" width="50" height="50" style="border-radius: 50%;"></a>
+                <a href="#"><img src="D:\proyecto\X.png" alt="X" width="50" height="50" style="border-radius: 50%;"></a>
+                <a href="https://www.instagram.com/essssteban_23/"><img src="D:\proyecto\Instagram.jpg" alt="Instagram" width="50" height="50" style="border-radius: 50%;"></a>
+            </div>
+            <center><p>2025 Power Training. Todos los derechos reservados. | <a href="https://web.facebook.com/juanesteban.figueroaleguizamon/">Contactanos</a> | <a href="https://www.youtube.com/@jefelsito0323">Youtube</a></p></center>
+        </div>
+    </footer>
+<script>
+let currentLanguage = 'es';
+
+function showLoading() {
+    document.getElementById('loading').style.display = 'block';
+    document.getElementById('errorMessage').style.display = 'none';
+}
+
+function hideLoading() {
+    document.getElementById('loading').style.display = 'none';
+}
+
+function showError(message) {
+    const errorDiv = document.getElementById('errorMessage');
+    errorDiv.textContent = message;
+    errorDiv.style.display = 'block';
+}
+
+function updateLanguageIndicator(lang) {
+    const indicator = document.getElementById('currentLang');
+    if (lang === 'es') {
+        indicator.textContent = 'Idioma actual: Español';
+    } else {
+        indicator.textContent = 'Current Language: English';
+    }
+}
+
+function translateToEnglish() {
+    if (currentLanguage === 'en') return;
+    
+    showLoading();
+    
+    setTimeout(() => {
+        const elements = document.querySelectorAll('.translatable');
+        
+        elements.forEach(element => {
+            const englishText = element.getAttribute('data-en');
+            if (englishText) {
+                element.textContent = englishText;
+            }
+        });
+        
+        // Traducir elementos específicos de tu página
+        const fig1 = document.querySelector('.fig1');
+        if (fig1) {
+            fig1.innerHTML = '<center>Train Hard</center>';
+        }
+        
+        // Traducir enlaces del menú
+        const menuLinks = document.querySelectorAll('.submenu .opcion a');
+        const englishMenuTexts = ['Problem Question', 'General Objective', 'Specific Objectives'];
+        menuLinks.forEach((link, index) => {
+            if (englishMenuTexts[index]) {
+                link.textContent = englishMenuTexts[index];
+            }
+        });
+        
+        // Traducir navegación vertical
+        const navLinks = document.querySelectorAll('.menu-vertical a');
+        const englishNavTexts = ['Home', 'App', 'FAQs', 'Content', 'About Us'];
+        navLinks.forEach((link, index) => {
+            if (englishNavTexts[index]) {
+                if (index === 4) {
+                    link.innerHTML = '<center>About Us</center>';
+                } else {
+                    link.textContent = englishNavTexts[index];
+                }
+            }
+        });
+        
+        // Traducir textos adicionales de la página
+        const text6 = document.querySelector('.text6');
+        if (text6) {
+            text6.innerHTML = '<center>Different home workouts for you</center>';
+        }
+        
+        const text8 = document.querySelector('.text8');
+        if (text8) {
+            text8.innerHTML = '<center>Frequently asked questions about exercise</center>';
+        }
+        
+        const text10 = document.querySelector('.text10');
+        if (text10) {
+            text10.innerHTML = '<center>Learn about various muscles</center>';
+        }
+        
+        const text12 = document.querySelector('.text12');
+        if (text12) {
+            text12.textContent = 'Calculate your BMI';
+        }
+        
+        const text13 = document.querySelector('.text13');
+        if (text13) {
+            text13.innerHTML = '<center>Interactive App about exercise</center>';
+        }
+        
+        // Traducir footer
+        const footerText = document.querySelector('footer p');
+        if (footerText) {
+            footerText.innerHTML = '2025 Power Training. All rights reserved. | <a href="https://web.facebook.com/juanesteban.figueroaleguizamon/">Contact us</a> | <a href="https://www.youtube.com/@jefelsito0323">Youtube</a>';
+        }
+        
+        currentLanguage = 'en';
+        updateLanguageIndicator('en');
+        updateButtonStates();
+        hideLoading();
+    }, 1000);
+}
+
+function translateToSpanish() {
+    if (currentLanguage === 'es') return;
+    
+    showLoading();
+    
+    setTimeout(() => {
+        const elements = document.querySelectorAll('.translatable');
+        
+        elements.forEach(element => {
+            const spanishText = element.getAttribute('data-es');
+            if (spanishText) {
+                element.textContent = spanishText;
+            }
+        });
+        
+        // Restaurar elementos específicos de tu página
+        const fig1 = document.querySelector('.fig1');
+        if (fig1) {
+            fig1.innerHTML = '<center>Entrena Fuerte</center>';
+        }
+        
+        // Restaurar enlaces del menú
+        const menuLinks = document.querySelectorAll('.submenu .opcion a');
+        const spanishMenuTexts = ['Pregunta Problema', 'Objetivo General', 'Objetivos Específicos'];
+        menuLinks.forEach((link, index) => {
+            if (spanishMenuTexts[index]) {
+                link.textContent = spanishMenuTexts[index];
+            }
+        });
+        
+        // Restaurar navegación vertical
+        const navLinks = document.querySelectorAll('.menu-vertical a');
+        const spanishNavTexts = ['Inicio', 'App', 'FAQs', 'Contenido', 'Sobre nosotros'];
+        navLinks.forEach((link, index) => {
+            if (spanishNavTexts[index]) {
+                if (index === 4) {
+                    link.innerHTML = '<center>Sobre nosotros</center>';
+                } else {
+                    link.textContent = spanishNavTexts[index];
+                }
+            }
+        });
+        
+        // Restaurar textos adicionales de la página
+        const text6 = document.querySelector('.text6');
+        if (text6) {
+            text6.innerHTML = '<center>Diferentes entrenamientos desde casa para ti</center>';
+        }
+        
+        const text8 = document.querySelector('.text8');
+        if (text8) {
+            text8.innerHTML = '<center>Preguntas frecuentes acerca del ejercicio</center>';
+        }
+        
+        const text10 = document.querySelector('.text10');
+        if (text10) {
+            text10.innerHTML = '<center>Conoce varios musculos</center>';
+        }
+        
+        const text12 = document.querySelector('.text12');
+        if (text12) {
+            text12.textContent = 'Calcula tu IMC';
+        }
+        
+        const text13 = document.querySelector('.text13');
+        if (text13) {
+            text13.innerHTML = '<center>App interactivo acerca del ejercicio</center>';
+        }
+        
+        // Restaurar footer
+        const footerText = document.querySelector('footer p');
+        if (footerText) {
+            footerText.innerHTML = '2025 Power Training. Todos los derechos reservados. | <a href="https://web.facebook.com/juanesteban.figueroaleguizamon/">Contactanos</a> | <a href="https://www.youtube.com/@jefelsito0323">Youtube</a>';
+        }
+        
+        currentLanguage = 'es';
+        updateLanguageIndicator('es');
+        updateButtonStates();
+        hideLoading();
+    }, 1000);
+}
+
+function updateButtonStates() {
+    const toEnglishBtn = document.getElementById('toEnglishBtn');
+    const toSpanishBtn = document.getElementById('toSpanishBtn');
+    
+    if (currentLanguage === 'es') {
+        toEnglishBtn.style.opacity = '1';
+        toSpanishBtn.style.opacity = '0.6';
+        toEnglishBtn.style.pointerEvents = 'auto';
+        toSpanishBtn.style.pointerEvents = 'none';
+    } else {
+        toEnglishBtn.style.opacity = '0.6';
+        toSpanishBtn.style.opacity = '1';
+        toEnglishBtn.style.pointerEvents = 'none';
+        toSpanishBtn.style.pointerEvents = 'auto';
+    }
+}
+
+// Inicializar estados de botones
+updateButtonStates();
+</script>
+</body>
+</html>
